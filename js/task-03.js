@@ -14,14 +14,10 @@ const images = [
 ];
 
 const listElement = document.querySelector(".gallery");
-let imgs = "";
-images.forEach(image => {
- const markup = `<li>
- <img src="${image.url}" alt="${image.alt}" width="200" height="150">
-</li>`;
-  imgs += markup;
 
-});
-listElement.insertAdjacentHTML("afterbegin", imgs)
+const typy = images.map(({ url, alt}) => 
+ `<li><img src="${url}" alt="${alt}" width="200" height="150"></li>`
+).join("");
+listElement.insertAdjacentHTML("afterbegin", typy)
 listElement.style.display = "flex";
 listElement.style.gap = "40px";
