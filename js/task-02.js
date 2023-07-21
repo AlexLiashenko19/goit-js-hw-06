@@ -9,11 +9,14 @@ const ingredients = [
 
 const listIngradients = document.querySelector("#ingredients")
 
+let newArr = []
+
 ingredients.forEach(ingredient => {
   const liElement = document.createElement("li");
   liElement.textContent = ingredient;
   liElement.className = "item";
-  listIngradients.append(liElement);
-  console.log(liElement);
+  newArr.push(liElement);
 });
+
+listIngradients.append(...newArr);
 
